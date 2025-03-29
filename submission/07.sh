@@ -20,8 +20,6 @@ if [ "$SCRIPT_HEX" == "null" ] || [ -z "$SCRIPT_HEX" ]; then
   exit 1
 fi
 
-# echo "🔍 Extracted scriptPubKey: $SCRIPT_HEX"
-
 # Step 4: Decode the script to get the address
 SCRIPT_INFO=$(bitcoin-cli -regtest decodescript "$SCRIPT_HEX")
 ADDRESS=$(echo "$SCRIPT_INFO" | jq -r '.address')
@@ -32,4 +30,4 @@ if [ "$ADDRESS" == "null" ] || [ -z "$ADDRESS" ]; then
 fi
 
 # ✅ Final Result
-echo "✅ Receiver's Address: $ADDRESS"
+echo $ADDRESS
