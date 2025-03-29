@@ -34,6 +34,5 @@ RAW_TX=$(bitcoin-cli -regtest createrawtransaction \
 
 # 5. Convert to PSBT
 PSBT=$(bitcoin-cli -regtest converttopsbt "$RAW_TX")
-
-echo "✅ Matching PSBT:"
 echo "$PSBT"
+
