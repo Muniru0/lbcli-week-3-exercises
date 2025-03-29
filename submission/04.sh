@@ -16,4 +16,4 @@ MULTISIG=$(bitcoin-cli -regtest createmultisig 2 "[\"$PUBKEY1\", \"$PUBKEY2\", \
 
 # Display result
 # echo "✅ 2-of-3 P2SH Multisig Address:"
-echo "$MULTISIG" | jq '.address'
+echo "$MULTISIG" | jq -r '.address'
